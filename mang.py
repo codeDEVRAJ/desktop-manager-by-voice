@@ -174,7 +174,7 @@ def run_voice_assistant():
            command = recognizer.recognize_google(source).lower()
            print(f"Your Command : {command}");
            
-           if command.starts('nova'):
+           if command.startswith('nova'):
                   speak('Hey sir , what can i assist you with ?')
                   command = command[4:].strip()
               
@@ -182,14 +182,28 @@ def run_voice_assistant():
                   if handle_response(command):
                      continue
             
-                  if open in command:
-                     app_name = command.replace('open' , "").strip()
+                  if "open" in command:
+                     app_name = command.replace("open", "").strip()
                      open_app(app_name)
-                     
                   else:
-                     print("I only respond to command that starting with 'nova'.")
-                     
-                  
-                  
+                     print("No valid command found")
+    
+           else:
+              speak("I only respond to commands that start with 'nova'.")
+              print("I only respond to commands that start with 'nova'.")
+
+     except sr.UnknownValueError:
+        print("sorry! , I didn't understand") 
+        
+     except sr.RequestError:
+        print("Could not request results from google speech recognition service.")
+        
+     except sr.WaitTimeoutError:
+        print("no speech detected. Trying again.......")
+     except KeyboardInterrupt:
+        print("Assistant stoped.")
+        
+     break
+         
            
            
