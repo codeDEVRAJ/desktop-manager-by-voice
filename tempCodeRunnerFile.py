@@ -1,0 +1,1 @@
+command = command[4:].strip()
