@@ -1,6 +1,6 @@
 # 🚀 Personal Voice Assistant
 
-![Voice Assistant](https://example.com/voice_assistant_banner.png)  
+
 
 ## 📝 Description
 A smart and interactive personal voice assistant built using Python, featuring a sleek Graphical User Interface (GUI) designed with PyQt5. This assistant listens to voice commands, responds using text-to-speech, and executes basic tasks efficiently.
